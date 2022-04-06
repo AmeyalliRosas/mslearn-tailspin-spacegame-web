@@ -37,19 +37,7 @@ steps:
   inputs:
     command: 'restore'
     projects: '**/*.csproj'
-
-- template: templates/build.yml
-  parameters:
-    buildConfiguration: 'Debug'
-
-- template: templates/build.yml
-  parameters:
-    buildConfiguration: 'Release'
-
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact: drop'
-  condition: succeeded()
-
+    
 schedules:
 - cron: "0 3 * * Mon-Fri" # cron syntax defining a schedule
   displayName: trigger test  # friendly name given to a specific schedule
