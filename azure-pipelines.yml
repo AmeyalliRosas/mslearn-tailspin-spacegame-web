@@ -51,7 +51,7 @@ steps:
   condition: succeeded()
 
 schedules:
-- cron: "0 03 * *" # cron syntax defining a schedule
+- cron: "0 3 * * Mon-Fri" # cron syntax defining a schedule
   displayName: trigger test  # friendly name given to a specific schedule
   branches:
     include: 
