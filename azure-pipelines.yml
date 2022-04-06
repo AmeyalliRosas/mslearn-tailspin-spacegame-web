@@ -49,3 +49,11 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
   condition: succeeded()
+
+schedules:
+- cron: "0 03 * *" # cron syntax defining a schedule
+  displayName: trigger test  # friendly name given to a specific schedule
+  branches:
+    include: 
+    - main # which branches the schedule applies to
+   
